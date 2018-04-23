@@ -1,0 +1,16 @@
+React JS
+	Javascript - 5 to 7
+		Basics
+		In Depth
+			OOPS( Class, Inheritance)
+			ES6 standards
+			Typescript
+	React - 5 to 7
+		Basics - Introduction
+		React with HTML
+	Node - 1
+		Basics
+	React with Node - 10
+		Project - 5 to 10 screens 
+			
+			

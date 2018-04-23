@@ -1,0 +1,152 @@
+// Creating a variable
+// Syntax
+var variableName = defaultValue;
+
+var x = 10;
+
+Viewing the values inside a variable
+// Approach 1
+console.log(x); => It prints value to console
+// Approach 2
+alert(x); => It displays value in alert box
+
+var y;
+console.log(y) => it prints undefined
+y = 20;
+
+function
+	Block of code 
+	Code is added for reusability and easy to distribute
+
+// Approach 1 for Creating a function 
+// Syntax 
+function functionName(arguments) { 
+	// return statement if needed.
+}
+
+function printWelcome(){
+	console.log('Welcome to Demo');
+}
+
+// Executing a function
+// Syntax
+functionName(parameters);
+
+printWelcome(); => prints Welcome to Demo to the console.
+
+function addition(x, y){
+	var z = x + y;
+	return z;
+}
+addition(1, 2) => 3
+addition(1) => NaN
+
+NaN => Not a number
+
+1 + undefined => NaN
+1 - undefined => NaN
+1 / undefined => NaN
+1 * undefined => NaN
+
+var a;
+var b;
+var c;
+
+var d = a || b || c || 40;
+d => 40 
+
+c = 30;
+d = a || b || c || 40;
+d => 30
+
+b = 20;
+d = a || b || c || 40;
+d => 20;
+
+a = 10;
+d = a || b || c || 40;
+d => 10;
+
+function subtraction(x, y) {
+	// x, y are like arguments
+	x = x || 0;
+	y = y || 0;
+	console.log('x value is ' + x );
+	console.log('y value is ' + y );
+	var z = x - y;
+	return z;
+}
+subtraction(10, 8) => 2
+subtraction(10) => 10
+subtraction() => 0
+subtraction(10, 8, 2) => 2
+
+Additional Params will be ignore 
+10 is copied to x, 8 is copied to y and 2 is ignored.
+Passing less Params will be considered as undefined in arguments.
+
+typeof => internal function present in browsers
+	It returns type of value
+	
+Types
+	String => typeof("Karthik")
+	Number => typeof(10)
+	Boolean => typeof(true)
+	Undefined => typeof(m) => var m;
+	Function => typeof(multiplication)
+
+// Approach 2 for Creating a function 
+// Syntax 
+var functionName = function (arguments) { 
+	// return statement if needed.
+}
+var multiplication = function(x, y){
+	var z = x * y;
+	return z;
+}
+
+var variableName 
+	=> value
+	   function
+	
+// Self Executing function
+	Function is created and executed 
+	After execution, memory allocated for function is also cleared.
+	Can return a value ie result
+	
+// Syntax
+(function functionName(){})();
+
+(function printWelcome(){ 
+	console.log('Welcome to Demo');
+})();
+
+(function add(x, y){ 
+	var z = x + y;
+	return z;
+})(10, 2, 5);
+
+var result = (function add(x, y){ 
+	var z = x + y;
+	return z;
+})(10, 2, 5);
+
+conditional Operator
+var variableName = condition ? value1 : value2;
+	if condition is true
+	variableName = value1
+	else 
+	variableName = value2
+
+var z = 5 > 8 ? 10 : 2;
+z => 2
+
+1 == "1" => true
+1 === "1" => false
+
+== compares only value
+=== compares both value and type
+
+http://github.com/mkrishna2025/REACT-003
+
+
