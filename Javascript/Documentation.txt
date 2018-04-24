@@ -1,3 +1,5 @@
+// Start - Day 1
+
 // Creating a variable
 // Syntax
 var variableName = defaultValue;
@@ -147,6 +149,127 @@ z => 2
 == compares only value
 === compares both value and type
 
-http://github.com/mkrishna2025/REACT-003
+http://github.com/mkrishna2025/REACT_003
+
+// End - Day 1
+
+// Start - Day 2
+Object
+	Its a key value pair
+	key - String => can access using . or []
+	      Number => can access using []
+		  symbols like _ is allowed => var person5 = { first_name: 'Karthik' }
+	value -
+			Primitive - string
+						number
+						boolean
+			function
+			Object
+						
+		  
+	
+var person = {
+	firstName: 'Arjun',
+	lastName: 'Krishna'
+}
+
+// Accessing Values
+person.firstName
+person['lastName']
+
+// Adding/Updating a key value
+person.age = 20;
+person['city'] = 'Hyderabad';
+
+// Deleting a key
+delete person.city
+delete person['age']
+
+// Object as a value
+person.address = {
+	line1: 'Kukatpally',
+	line2: 'Hyderabad'
+}
+
+To print Kukatpally
+person.address.line1
+person.address['line1']
+person['address']['line1']
+
+var calculator = {
+	addition: function(x, y) {
+		return x + y;
+	},
+	subtraction: function(x, y) {
+		x = x || 0;
+		y = y || 0;
+		return x - y;
+	}
+}
+
+calculator.multiplication = function(x, y){
+	return x * y;
+}
+calculator.multiplication( 10, 2) => 20
+
+
+// Arrays
+var students = ['Krishna', 'Neha', 'Karthik'];
+
+// Adding item to array.
+students.push('Venkat');
+students.push('Kumar');
+
+// Printing Values
+// Approach 1
+console.log(students[0]);
+console.log(students[1]);
+console.log(students[2]);
+console.log(students[3]);
+console.log(students[4]);
+console.log(students[5]); => will return undefined instead of exception.
+
+// Approach 2
+using for 
+for(var index = 0; index < students.length; index ++ ){
+	console.log(index);
+	var student = students[index];
+	console.log(student);
+}
+
+// Approach 3
+using for in => Iteration is done for index
+for(var index in students) {
+	console.log(index);
+	var student = students[index];
+	console.log(student);
+}
+
+// Approach 4
+using for of => Iteration is done for items
+for(var student of students) {
+	console.log(student);
+}
+
+// Last element is copied to variable and then deleted in that array.
+var lastElement = students.pop();
+
+https://www.w3schools.com/js/js_array_methods.asp
+
+
+// Array of different elements
+var diff = [1, "Karthik", true, function(x, y) { return x + y; } ]
+
+diff[3] => return f ie function
+diff[3](1, 2)
+
+
+
+
+
+
+
+
+
 
 
