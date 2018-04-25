@@ -263,6 +263,154 @@ var diff = [1, "Karthik", true, function(x, y) { return x + y; } ]
 diff[3] => return f ie function
 diff[3](1, 2)
 
+-- End - Day 2
+
+-- Start - Day 3
+
+Helper Methods for conversion
+
+parseInt => converts string to number => it removes decimals rather round off
+parseFloat => string to float
+toString => number to string.
+(1).toString() => use () if it is a value
+var a = 10;
+a.toString()
+
+// Creating users(object)
+
+// User 1
+var lakshman = {
+	getName: function(){
+		return "Lakshman Reddy";
+	},
+	getAge: function(){
+		return 10;
+	} 
+}
+
+// User 2
+var neha = {
+	getName: function(){
+		return "Neha Singh";
+	},
+	getAge: function(){
+		return 20;
+	} 
+}
+printing to console => 
+console.log(neha.getName() + " has age " + neha.getAge()) 
+
+Class
+	Structure and has no physical values
+	
+	Data Hiding
+	Code Redundancy
+	Inheritance
+	Constructors => Passing values while creating an instance.
+
+Object/Instance =>
+	It is physical example of a Class. 
+	Methods/Fields override in one instance will not affect other instances.
+	
+// Approach 1 for Creating a class
+// Syntax
+var className = function() {
+	// private fields/methods
+	// global fields/methods
+	
+	return {
+		// public fields/methods
+	}
+}
+
+OR 
+
+function className() {
+	// private fields/methods
+	// global fields/methods
+	
+	return {
+		// public fields/methods
+	}
+}
+
+private => can be accessed with in a class
+public => can be accessed with in a class and for instance(object)
+global => can be accessed directly and no need of any instance
+
+
+var TestClass = function(){
+	return {
+		printWelcome: function(){
+			console.log('Welcome to Demo');
+		}
+	}
+}
+
+// Creating Instances
+var t1 = new TestClass();
+var t2 = new TestClass();
+var t3 = new TestClass();
+
+t1.printWelcome() => Welcome to Demo
+
+// Overiding Instance method => wont affect other instances like t1 and t3.
+
+t2.printWelcome = function(){
+	console.log('Welcome to Overided Demo');
+}
+t2.printWelcome() => Welcome to Overided Demo
+
+t3.printWelcome(); => Welcome to Demo
+
+Field/Member/Property
+Function/Method/API
+
+// Example for Constructor
+var Person = function(firstName, lastName, age) {
+	return {
+		getFullName: function(){
+			return firstName + ' ' + lastName;
+		},
+		getAge: function(){
+			return age;
+		}
+	}
+}
+
+var lakshman = new Person('Lakshman', 'Reddy', 10);
+var neha = new Person('Neha', 'Singh', 20);
+neha.getFullName() => Neha Singh
+
+
+String Cases
+	Camel Case => first letter will be small => studentInfo => functions
+	Variable Case => first letter will be upper case => StudentInfo => Class
+	Lower Case => all letters will be in lower case => studentinfo
+	Upper Case => all letters will be in Upper case => STUDENTINFO
+	
+	
+var Calculator = function(secretCode){
+	var print = function(result){
+		console.log('Result is ' + result);
+	}
+	
+	var secret = secretCode;
+	
+	return {
+		version: 1.0,
+		add: function(x, y) {
+			var z = x + y;
+			print(z);
+			console.log(secret);
+			return z;
+		}
+	}
+}
+	
+	
+
+
 
 
 
