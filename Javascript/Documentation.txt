@@ -407,8 +407,124 @@ var Calculator = function(secretCode){
 		}
 	}
 }
+
+// End - Day 3
+
+// Start - Day 4
+var Calculator = function(secretCode){
+	// private method
+	var print = function(result){
+		console.log('Result is ' + result);
+	}
 	
+	// private variable
+	var secret = secretCode;
 	
+	// global variable
+	pi = 3.14;
+	
+	// global method
+	getBrowser = function (){
+    	return "Chrome";
+	}
+	
+	// public methods/variables
+	return {
+		version: 1.0,
+		add: function(x, y) {
+			var z = x + y;
+			print(z);
+			console.log(secret);
+			return z;
+		}
+	}
+}
+
+// Passing Object to function as a single input instead of multiple inputs
+function getFullName(fn, ln, age, city) {
+	fn = fn || '';
+	ln = ln || '';
+	age = age || 0;
+	city = city || '';
+	return fn + ln + ", " + age + "," + city;
+}
+// Disadvantages
+	We must pass all params if I want to pass City
+	Order should be same 
+
+function getFullName(options){
+	return options.fn + options.ln + ", " + options.age + "," + options.city;
+}
+
+// After undefined handling
+function getFullName(options){
+	options = options || {};
+	options.fn = options.fn || '';
+	options.ln = options.ln || '';
+	options.age = options.age || '';
+	options.city = options.city || '';
+	return options.fn + options.ln + ", " + options.age + "," + options.city;
+}
+
+getFullName({ ln: 'Kumar', age: 20}) => kumar, 20, 
+
+// Passing Object to function as a single input instead of multiple inputs
+function Student(fn, ln, age, city) {
+	return {
+    	getFullName: function(){
+        	return fn + ln + ", " + age + "," + city;
+		}
+	}
+}
+
+// Passing Object to constructor 
+function Student(options) {
+	options = options || {};
+	options.fn = options.fn || '';
+	options.ln = options.ln || '';
+	options.age = options.age || '';
+	options.city = options.city || '';
+	
+	return {
+    	getFullName: function(){
+        	return options.fn + options.ln + ", " + options.age + "," + options.city;
+		}
+	}
+}
+
+var kranthi = new Student({ ln: 'Kranthi', age: 30});
+kranthi.getFullName() => Kranthi, 30,
+
+
+function Login(options) {
+	options = options || {};
+	options.userName = options.userName || 'Guest User';
+	options.country = options.country || 'India';
+	
+	return {
+    	getUserInfo: function(){
+        	return options.userName + ", " + options.country;
+		}
+	}
+}
+var demoLogin = new Login();
+demoLogin.getUserInfo() => "Guest User, India"
+
+var person = { fn: 'Arjun', ln: 'Kumar'};
+
+// converting object to string => In Most cases, string format is used to send to backend.
+
+var str = JSON.stringify(person);
+str => "{"fn":"Arjun","ln":"Kumar"}"
+
+// converting string to object => In Most cases, backend gives string format which cant be used to print values.. there we need to convert into object.
+JSON.parse(str);
+
+sample source might be
+var JSON = {
+	parse: function(str){},
+	stringify: function(object) {}
+}
 
 
 
