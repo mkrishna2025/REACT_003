@@ -526,13 +526,106 @@ var JSON = {
 	stringify: function(object) {}
 }
 
+// End - Day 4
+
+// Start - Day 5
+
+// Approach 2 for creating a class
+// Syntax
+var className = function() {
+	// private fields/methods
+	// global fields/methods
+	
+	// public fields/methods
+	this.
+}
+
+// this is reference of person. Usually we call it as instance/object scope/context.
+var person = {
+	name: 'Kalyan',
+	getName: function(){
+    	return this.name;
+	}
+}
 
 
+var Calculator = function(secretCode){
+	// private method
+	var print = function(result){
+		console.log('Result is ' + result);
+	}
+	
+	// private variable
+	var secret = secretCode;
+	
+	// global variable
+	pi = 3.14;
+	
+	// global method
+	getBrowser = function (){
+    	return "Chrome";
+	}
+	
+	this.version = 1.0;
+	this.add = function(x, y) {
+		var z = x + y;
+		print(z);
+		console.log(secret);
+		return z;
+	}
+	
+	this.sub = function(x, y) {
+		var z = x + y;
+		print(z);
+		console.log(secret);
+		return z;
+	}
+}
+
+function add(x, y) {
+	console.log(x);
+	console.log(y);
+	return x + y;
+}
+Executing
+// Approach - 1
+add(1, 2)
+
+// Approach - 2
+functionName( scope, parameters);
+add(this, 1, 2 ) => 3
 
 
+var ScientificCalculator = function(secret){
+	Calculator.call(this, secret);
+	this.area = function(){
+		console.log('Need to Implement');
+	}
+	this.sub = function() {
+		console.log('Function is overided inside child class');
+	}
+}
+
+Points to Summarize:
+1. Controller goes inside method/function only if the instance is created and not on function/class creation.
+2. 
 
 
+Prototype
+	Used to inject methods for existing classes.
+	Newly injected methods are available for new instances and old instances also.
+	
+Syntax 
+Class.prototype.methodName = function() { .........}
 
+var s1= new ScientificCalculator();
+ScientificCalculator.prototype.mul = function(x, y) {
+	return x * y;
+}
+var s2 = new ScientificCalculator();
+s2.mul(2, 10) => 20
+
+s1.mul(10, 20) => 200 => mul is accessible even though it is created before adding prototype
 
 
 

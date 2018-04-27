@@ -1,0 +1,47 @@
+<html>
+<head>
+	<script type="text/javascript">
+	(function test() {
+		alert('alert');
+		debugger;
+		var Calculator = function(secretCode){
+			// private method
+			var print = function(result){
+				console.log('Result is ' + result);
+			}
+			
+			// private variable
+			var secret = secretCode;
+			
+			// global variable
+			pi = 3.14;
+			
+			// global method
+			getBrowser = function (){
+				return "Chrome";
+			}
+			
+			this.version = 1.0;
+			this.add = function(x, y) {
+				var z = x + y;
+				print(z);
+				console.log(secret);
+				return z;
+			}
+		}
+		
+		var ScientificCalculator = function(){
+			Calculator.call(this);
+			this.area = function(){
+				console.log('Need to Implement');
+			}
+		}
+		
+		var s1 = new ScientificCalculator();
+
+	})();
+	</script>
+</head>
+<body>
+</body>
+</html>
