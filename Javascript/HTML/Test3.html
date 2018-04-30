@@ -1,0 +1,55 @@
+<html>
+<head>
+	<script type="text/javascript">
+	
+		function createLabel(text){
+			var newlabel = document.createElement("Label");
+			newlabel.innerHTML = text;
+			return newlabel;
+		}
+		
+		function createTextBox(){
+			var newTextBox = document.createElement("input");
+			newTextBox.setAttribute('type', 'text');
+			
+			return newTextBox;
+		}
+		
+		function createButton(text){
+			var button = document.createElement("input");
+			button.setAttribute('type', 'button');
+			button.setAttribute('value', text);
+
+			return button;
+			
+		}
+		
+		
+		function afterRender(){
+			debugger;
+			
+			var container = document.getElementById('root');
+			
+			container.innerHTML += 'Welcome to Demo. Please Login.';
+			
+			container.innerHTML += "<br/><br/>";
+			
+			container.appendChild(createLabel('UserName'));
+			container.appendChild(createTextBox());
+			
+			container.innerHTML += "<br/><br/>";
+			
+			container.appendChild(createLabel('Password'));
+			container.appendChild(createTextBox());
+			
+			container.innerHTML += "<br/><br/>";
+			
+			container.appendChild(createButton('Login'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="root">
+	</div>
+</body>
+</html>

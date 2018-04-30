@@ -1,0 +1,48 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function afterRender(){
+			debugger;
+			alert('Page is rendered');
+			
+			document.getElementById('root').innerHTML += 'Welcome to Demo. Please Login.';
+			
+			document.getElementById('root').innerHTML += "<br/><br/>";
+			
+			var newlabel = document.createElement("Label");
+			newlabel.innerHTML = "UserName";
+			
+			document.getElementById('root').appendChild(newlabel);
+			
+			var newTextBox = document.createElement("input");
+			newTextBox.setAttribute('type', 'text');
+			
+			document.getElementById('root').appendChild(newTextBox);
+			
+			document.getElementById('root').innerHTML += "<br/><br/>";
+			
+			var newlabel2 = document.createElement("Label");
+			newlabel2.innerHTML = "Password";
+			
+			document.getElementById('root').appendChild(newlabel2);
+			
+			var newTextBox2 = document.createElement("input");
+			newTextBox2.setAttribute('type', 'text');
+			
+			document.getElementById('root').appendChild(newTextBox2);
+			
+			document.getElementById('root').innerHTML += "<br/><br/>";
+			
+			var button = document.createElement("input");
+			button.setAttribute('type', 'button');
+			button.setAttribute('value', 'Submit');
+			
+			document.getElementById('root').appendChild(button);
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="root">
+	</div>
+</body>
+</html>

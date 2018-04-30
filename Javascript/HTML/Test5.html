@@ -1,0 +1,33 @@
+<html>
+<head>
+	<script type="text/javascript" src="NITUIFramework.js">
+	</script>
+	<script type="text/javascript">
+		
+		function afterRender(){
+		
+			var container = document.getElementById('root');
+			
+			container.innerHTML += 'Welcome to Demo. Please Login.';
+			
+			container.innerHTML += "<br/><br/>";
+			
+			container.appendChild(NITUIFramework.createElement('label', { text: 'UserName'}));
+			container.appendChild(NITUIFramework.createElement('text'));
+			
+			container.innerHTML += "<br/><br/>";
+			
+			container.appendChild(NITUIFramework.createElement('label', { text: 'Password'}));
+			container.appendChild(NITUIFramework.createElement('text'));
+			
+			container.innerHTML += "<br/><br/>";
+			
+			container.appendChild(NITUIFramework.createElement('button', { text: 'Login' }));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="root">
+	</div>
+</body>
+</html>

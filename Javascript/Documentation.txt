@@ -627,6 +627,48 @@ s2.mul(2, 10) => 20
 
 s1.mul(10, 20) => 200 => mul is accessible even though it is created before adding prototype
 
+// End - Day 5
 
+// Start - Day 6
+
+Events => Capturable things
+
+Dynamic HTML => Rendering HTML Elements Dynamically
+
+Basic Principle of UI Frameworks => Have simple div inside body. When this body is loaded inject HTML elements.
+
+
+Ext.create('Ext.Button', {
+    renderTo: document.body,
+    text    : 'Click me',
+    scale   : 'large'
+});
+
+
+// Sample source code
+var Ext = {
+	create: function(type, attributes){
+		if(type == 'Ext.Button') {
+			var button = document.createElement("input");
+			button.setAttribute('type', 'button');
+			button.setAttribute('value', attributes.text);
+			document.body.appendChild(button);
+		}
+	}
+}
+
+
+// REACT
+React.createElement('h1', 'Welcome to Demo');
+
+var React = {
+	createElement: function(type, innerHML) {
+		if(type == 'h1') {
+			var h1 = document.createElement('h1');
+			h1.innerHML = innerHML;
+			return h1;
+		}
+	}
+}
 
 
