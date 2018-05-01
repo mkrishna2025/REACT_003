@@ -1,0 +1,33 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<script type="text/babel">
+		function TestComponent(props) {
+			return <div> 
+						{props.title}. Please Login.
+						<br/>
+						<br/>
+						<label>UserName</label>
+						<input type='text' />
+						<br/>
+						<br/>
+						<label>Password</label>
+						<input type='text' />
+						<br/>
+						<br/>
+						<input type='button' value='Submit' />
+					</div>;
+		}
+		function afterRender(){
+			ReactDOM.render(TestComponent( { title: 'Welcome to React Demo'} ), document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>

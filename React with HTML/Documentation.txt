@@ -1,0 +1,35 @@
+React
+
+Libraries to import
+	React - React.createElement
+	ReactDom - ReactDom.render(what to render, where to render);
+	
+React.createElement(type, attributes, innerHTML);
+
+Old Version
+var element = React.createElement('div', { id: 'div1'}, 'Welcome to Demo');
+
+New Version 
+var element = <div> Welcome to Demo 2</div>;
+
+In New Version, we write JSX.
+
+HTML vs JSX
+	JSX tags should close. 
+	
+HTML
+	Not Compiled.
+	UI Elements are added to screen directly.
+JSX
+	Compiled
+	It will be converted into old standard(React.CreateElement) and then elements are created dynamically.
+	
+function TestComponent(props) {
+
+}
+
+in Old syntax
+TestComponent({ name: ''});
+
+in JSX
+<TestComponent name='' />

@@ -1,0 +1,32 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<script type="text/babel">
+		function Student(props){
+			return <div> Welcome to Demo, {props.name}, {props.city}</div>;
+		}
+		
+		function TestComponent(props) {
+			return <div> 
+						<Student name="Karthik" city="Hyderabad" />
+						<Student name="Neha" />
+						<Student name="Ramesh" />
+					</div>;
+		}
+		function afterRender(){
+			// with out JSX
+			//ReactDOM.render(TestComponent( { title: 'Welcome to React Demo'} ), document.getElementById('container'));
+			
+			// using JSX
+			ReactDOM.render(<TestComponent title='Welcome to React Demo' />, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>

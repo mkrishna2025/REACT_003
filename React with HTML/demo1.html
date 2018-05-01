@@ -1,0 +1,19 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+
+	<script type="text/javascript">
+		function afterRender(){
+			var element = React.createElement('div', { id: 'div1'}, 'Welcome to Demo');
+			ReactDOM.render(element, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	This is Header
+	<div id="container">
+	</div>
+	This is Footer
+</body>
+</html>
