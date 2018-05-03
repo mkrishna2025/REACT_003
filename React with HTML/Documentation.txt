@@ -33,3 +33,143 @@ TestComponent({ name: ''});
 
 in JSX
 <TestComponent name='' />
+
+
+ES6
+We can use ES6 standards in a html using babel plugin
+
+https://babeljs.io/
+
+Code Testing Purpose
+https://babeljs.io/repl/#?babili=false&browsers=&build=&builtIns=false&code_lz=MYGwhgzhAEAKCmAnCB7AdtA3gKAL5A&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=6.26.0&envVersion=
+
+
+Creating Class
+
+Pure Javascript
+function Person {
+	
+}
+
+ES6
+class Person {
+}
+
+
+Pure Javascript
+function Calculator() {
+	return {
+		add: function(x, y) {
+			return x + y;
+		},
+		sub: function(x, y) {
+			return x - y;
+		}
+	}
+}
+
+ES6
+class Calculator {
+	add(x, y) {
+    	return x + y;
+    }
+	sub(x, y) {
+    	return x - y;
+    }
+}
+
+Constructor Pattern
+Pure Javascript
+var Person = function(options){
+}
+
+ES6 
+class Person {
+    constructor(options) {
+    }
+}
+
+Pure Javascript
+var Student = function(props){
+	this.getFullName = function(){
+    	return props.firstName + ' ' + props.lastName;
+	}
+}
+
+ES6
+class Student {
+	constructor(props) {
+    	this.firstName = props.firstName;
+		this.lastName = props.lastName;
+	}
+	getFullName() {
+    	return this.firstName + '' + this.lastName;
+	}
+}
+
+class Student {
+	constructor(props) {
+    	this.props = props;
+	}
+	getFullName() {
+    	return this.props.firstName + '' + this.props.lastName;
+	}
+}
+
+Inheritance Sample in ES6
+class Father {
+	getName(){
+    	return "Rakesh";
+	}
+	getGender(){
+    	return "M";
+	}
+}
+class Son extends Father {
+	getName(){
+		return "Venkat";
+	}
+
+	getCity() {
+		return "Hyderabad";
+	}	
+}
+
+var s1 = new Son();
+
+s1.getCity() => "Hyderabad"
+s1.getName() => "Venkat"
+s1.getGender() => "M"
+
+
+Static Methods in ES6
+class Person {
+	getAge() { return 10; }
+	static getType() { return "Person" }
+}
+
+Person.getType() => Person
+
+var p1 = new Person()
+p1.getAge() => 10
+p1.getType() => VM175:1 Uncaught TypeError: p1.getType is not a function at <anonymous>:1:4
+
+Constant Variable => Cant update
+const pi = 3.14
+pi = 4; => VM183:1 Uncaught TypeError: Assignment to constant variable. at <anonymous>:1:4
+
+
+Class => Person
+Field => age
+
+if age is public => p1.age
+if age is private => p1.age => undefined
+if age is global => age
+if age is static => Person.age
+if age is const => age => age = 20 => throws exception.
+
+React
+Creating React Component
+Create a class and extend the React.Component class and implement the render method.
+
+
