@@ -172,4 +172,39 @@ React
 Creating React Component
 Create a class and extend the React.Component class and implement the render method.
 
+Demo6 => Using React Component instead of functions.
+Demo7 => Basic UL and LI Nodes using HTML.
+Demo8 => Creating courses in Array and constructing li elements dynamically
+Demo9 => Basic HTML Table
+Demo10 => Constructing Rows dynamically from JSON Array.
+Demo11 => Added Search Texbox and didnt implement the functionality
+Demo12 => Added Refresh button and showing only first 2 rows on click of it. Screen refreshes when state changes. We update the state using this.setState api present inside React.Component which we access it as current component extends React.Component.
 
+Variables inside React Component
+	Block Level  Variable => Variable created with in a function of React Component. => var age, var name => Can be accessible with in the block and cant be accessible outside the block. 
+	Private Variable => Not possible to use in ES6
+	public Variable => this.age, this.name => Can be accessible in all functions of React Component.
+	State Level Variable => this.state.age, this.state.name => Can be accessible in all functions of React Component.
+	
+In most cases, we update the state using internal function this.setState 
+
+Assume we need a,b,c,d,e variables inside state
+
+constructor(props){
+	super(props); // super is used to call base/parent class constructor
+	this.state = {
+		a: 1, 
+		b: 2,
+		c: 3,
+		d: 4,
+		e: 5
+	}
+}
+	
+Assume we need to update c to 10, e to 20
+	this.setState( { c: 10, e: 20 }); => screen refreshes automatically.
+	
+Assume we need to update c to 3, e to 5
+	this.setState( { c: 3, e: 5 }) => screen will not update as there is no change in state variables.
+	
+.bind => bind(this) to be added in order to pass scope to the event method

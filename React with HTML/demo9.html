@@ -1,0 +1,46 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<script type="text/babel">
+		class TestComponent extends React.Component {
+			render() {
+				return <div> 
+						{this.props.title}
+						<table>
+							<thead>
+								<tr>
+									<td> Name</td>
+									<td> Age</td>
+									<td> City</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td> Arjun </td>
+									<td> 20 </td>
+									<td> Hyderabad </td>
+								</tr>
+								<tr>
+									<td> Keerthi </td>
+									<td> 22 </td>
+									<td> Delhi </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>;
+			}
+		}
+		
+		function afterRender(){
+			ReactDOM.render(<TestComponent title='Welcome Students' />, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>
