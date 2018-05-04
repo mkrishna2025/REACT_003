@@ -1,0 +1,10 @@
+Demo6 => Using React Component instead of functions.
+Demo7 => Basic UL and LI Nodes using HTML.
+Demo8 => Creating courses in Array and constructing li elements dynamically
+Demo9 => Basic HTML Table
+Demo10 => Constructing Rows dynamically from JSON Array.
+Demo11 => Added Search Texbox and didnt implement the functionality
+Demo12 => Added Refresh button and showing only first 2 rows on click of it. Screen refreshes when state changes. We update the state using this.setState api present inside React.Component which we access it as current component extends React.Component.
+Demo13 => Applying Filter on SearchBox Change.
+Demo14 => Instead of SearchBox Change, Added Search and Reset buttons for refreshing data in table.
+Demo15 => Converting HTML to React Component. Converted login.html

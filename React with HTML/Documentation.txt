@@ -208,3 +208,6 @@ Assume we need to update c to 3, e to 5
 	this.setState( { c: 3, e: 5 }) => screen will not update as there is no change in state variables.
 	
 .bind => bind(this) to be added in order to pass scope to the event method
+
+
+fetching the value on events => event.target.value

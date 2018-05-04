@@ -1,0 +1,103 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<script type="text/babel">
+		class TestComponent extends React.Component {
+			constructor(props){
+				super(props);
+				
+				var students = [
+					{ name: 'Arjun', age: 20, city: 'Hyderabad' },
+					{ name: 'Archana', age: 21, city: 'Hyderabad' },
+					{ name: 'Prakash', age: 20, city: 'Hyderabad' },
+					{ name: 'Deepthi', age: 23, city: 'Delhi' },
+					{ name: 'Neha', age: 23, city: 'Delhi' },
+					{ name: 'Shilpa', age: 20, city: 'Hyderabad' }
+				];
+				
+				this.state = {
+					students: students,
+					cloneStudents: students
+				}
+			}
+			
+			onRefresh(){
+				alert('Button is clicked');
+				var filteredStudents = [
+					{ name: 'Arjun', age: 20, city: 'Hyderabad' },
+					{ name: 'Prakash', age: 21, city: 'Hyderabad' }
+				]
+				
+				this.setState( { cloneStudents: filteredStudents });
+			}
+			
+			onSearchBoxChange(event){
+				console.log(event.target.value);
+				var str = event.target.value;
+				
+				var filteredStudents = [];
+				
+				for(var student of this.state.students){
+					if(student.name.toLowerCase().indexOf(str.toLowerCase()) >= 0 || student.city.toLowerCase().indexOf(str.toLowerCase()) >= 0) {
+						filteredStudents.push(student);
+					}
+				}
+				
+				/*
+					for(var course of this.state.courses){
+						if(course.toLowerCase().indexOf(str.toLowerCase()) >= 0){
+							filteredCourses.push(course);
+						}
+					}
+				*/
+				
+				this.setState( { cloneStudents: filteredStudents });
+				
+			}
+			
+			render() {
+				var items = [];
+				
+				for(var student of this.state.cloneStudents) {
+					items.push(<tr>
+									<td> {student.name} </td>
+									<td> {student.age} </td>
+									<td> {student.city} </td>
+								</tr>);
+				}
+				
+				return <div> 
+						{this.props.title}
+						<br/>
+						<input type='text' onChange={this.onSearchBoxChange.bind(this)} /> Search
+						<br/>
+						<input type='button' value= 'Refresh' onClick={this.onRefresh.bind(this)} />
+						<table>
+							<thead>
+								<tr>
+									<td> Name</td>
+									<td> Age</td>
+									<td> City</td>
+								</tr>
+							</thead>
+							<tbody>
+								{items}
+							</tbody>
+						</table>
+					</div>;
+			}
+		}
+		
+		function afterRender(){
+			ReactDOM.render(<TestComponent title='Welcome Students' />, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>
