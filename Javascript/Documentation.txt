@@ -592,8 +592,8 @@ Executing
 add(1, 2)
 
 // Approach - 2
-functionName( scope, parameters);
-add(this, 1, 2 ) => 3
+functionName.call( scope, parameters);
+add.call(this, 1, 2 ) => 3
 
 
 var ScientificCalculator = function(secret){
