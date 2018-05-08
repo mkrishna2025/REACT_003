@@ -211,3 +211,41 @@ Assume we need to update c to 3, e to 5
 
 
 fetching the value on events => event.target.value
+
+
+function add(x, y) {
+	return x + y;
+}
+
+// Arrow Function
+add(x, y) => {
+	return x + y;
+}
+
+add(x, y) => x + y
+
+function setUserName(value){
+	this.userName = value;
+}
+
+setUserName(value) => {
+	this.userName = value;
+}
+
+setUserName(value) => this.userName = value
+
+style
+.red {
+	color: 'red';
+	align-items: left;
+}
+
+in HTML
+<h1 style="color: 'red';align-items: left" />
+<h1 class='red' />
+
+
+in JSX
+<h1 style={{ color: 'red', alignItems: 'left' }} />
+<h1 class='red' />
+

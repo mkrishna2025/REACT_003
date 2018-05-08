@@ -8,3 +8,7 @@ Demo12 => Added Refresh button and showing only first 2 rows on click of it. Scr
 Demo13 => Applying Filter on SearchBox Change.
 Demo14 => Instead of SearchBox Change, Added Search and Reset buttons for refreshing data in table.
 Demo15 => Converting HTML to React Component. Converted login.html
+Demo16 => Applied Country to State Filter
+s. Add constants for static data.
+Demo17 => Added Login Screen( username and password). Used inline arrow functions for onChange Events
+Demo 18 => Validations to Login Screen.

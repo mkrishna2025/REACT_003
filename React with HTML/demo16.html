@@ -1,0 +1,98 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<link rel="stylesheet" href="demo16.css" />
+
+	<script type="text/babel">
+		
+		const COUNTRIES = [
+			{ value: 1, display: 'India' },
+			{ value: 2, display: 'United States' },
+			{ value: 3, display: 'Canada' },
+			{ value: 4, display: 'England' }
+		];
+		
+		const STATES = [
+			{ value: 1, display: 'Telangana', country: 1 },
+			{ value: 2, display: 'Delhi', country: 1 },
+			{ value: 3, display: 'Rajastan', country: 1 },
+			{ value: 4, display: 'Newyork', country: 2 },
+			{ value: 5, display: 'New Jersey', country: 2 },
+			{ value: 6, display: 'Washington', country: 2 },
+			{ value: 7, display: 'Texas', country: 2 }
+		];
+		
+		class TestComponent extends React.Component {
+			constructor(props){
+				super(props);
+				this.state = {
+					countries: COUNTRIES,
+					states: STATES,
+					states_ref: STATES
+				};
+			}
+			onCountryChange(event){
+				var country = event.target.value;
+				var filteredStates = [];
+				for(var state of this.state.states) {
+					if(state.country == parseInt(country)){
+						filteredStates.push(state);
+					}
+				}
+				this.setState({ states_ref: filteredStates });
+			}
+			
+			render() {
+				var countries = [];
+				
+				for(var country of this.state.countries) {
+					countries.push(<option value={country.value}>{country.display}</option>);
+				}
+				
+				var states = [];
+				
+				for(var state of this.state.states_ref) {
+					states.push(<option value={state.value}>{state.display}</option>);
+				}
+				
+				return <div>
+					<h3>Using CSS to style an HTML Form</h3>
+					<div>
+					  <form action="">
+						<label>First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name.." />
+
+						<label>Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name.." />
+
+						<label>Country</label>
+						<select id="country" name="country" onChange={this.onCountryChange.bind(this)} >
+						  <option value="0">Select Country</option>
+						  {countries}
+						</select>
+					  
+						<label>State</label>
+						<select id="state" name="state">
+						  <option value="0">Select State</option>
+						  {states}
+						</select>
+						<input type="submit" value="Submit" />
+					  </form>
+					</div>
+					</div>;
+			}
+		}
+		
+		function afterRender(){
+			ReactDOM.render(<TestComponent title='Welcome to React Demo' />, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>
