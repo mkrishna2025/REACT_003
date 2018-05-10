@@ -8,7 +8,10 @@ Demo12 => Added Refresh button and showing only first 2 rows on click of it. Scr
 Demo13 => Applying Filter on SearchBox Change.
 Demo14 => Instead of SearchBox Change, Added Search and Reset buttons for refreshing data in table.
 Demo15 => Converting HTML to React Component. Converted login.html
-Demo16 => Applied Country to State Filter
-s. Add constants for static data.
+Demo16 => Applied Country to State Filters. Add constants for static data.
 Demo17 => Added Login Screen( username and password). Used inline arrow functions for onChange Events
-Demo 18 => Validations to Login Screen.
+Demo 18 => Validations to Login Screen. Error Messages are showing above Login Button and below each control.
+Demo 19 => Created Header, Footer components and reusing in all pages (AboutUs, ContactUs)
+Demo 20 => Earlier in Demo19, we need to use Header, Footer components in all the pages, in order to overcome this, we can use MasterPage concepts.
+Demo 21 => Splitting View and Logic so that Logic part can be used for both mobile and web.
+Demo 22 => ...variable used to create a clone of that variable 

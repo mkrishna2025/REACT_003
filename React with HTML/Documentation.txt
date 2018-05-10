@@ -249,3 +249,110 @@ in JSX
 <h1 style={{ color: 'red', alignItems: 'left' }} />
 <h1 class='red' />
 
+div
+	Header
+	CenterPanel
+	Footer
+div
+
+this.props.children => Component receives inner nodes/nested elements in the form of this.props.children. The elements added as inner nodes will be used as content page.
+
+Github Desktop Installation and Cloning Git repository
+https://www.youtube.com/watch?v=SJnEIcpbjzA&feature=youtu.be
+
+https://github.com/mkrishna2025/REACT_003.git
+
+Master pages 
+	allow you to create a consistent look 
+	and behavior for all the pages (or group of pages) in web application.
+	provides a template for other pages, with shared layout and functionality. 
+	defines placeholders for the content, which can be overridden by content pages.
+	
+block level => var x;
+public => this.x
+state => this.state.x;
+prop receiving => this.props.x; => cant be updatable
+children/inner nodes receiving => this.props.children
+
+Composition => Its a principle of using multiple components with in a single component.
+
+Inheritance vs Composition
+In Inheritance we can use features of parent component only, where as in Composition we can use features of all components which are added as elements.
+
+Cloning
+var obj = { 
+	firstName: 'Arjun', 
+	lastName: 'Krishna',
+	age: 20
+}
+
+// Approach 1
+var obj2 = {};
+obj2.firstName = obj.firstName;
+obj2.lastName = obj.lastName;
+obj2.age = obj.age;
+
+// Approach 2
+var obj3 = {};
+for(var key in obj) {
+	obj3[key] = obj[key];
+}
+
+// Approach 3
+var obj4 = {...obj};
+
+Cloning plus adding/modifying keys.
+var obj = { 
+	firstName: 'Arjun', 
+	lastName: 'Krishna',
+	age: 20
+}
+
+var obj2 = {};
+obj2.firstName = obj.firstName;
+obj2.lastName = obj.lastName;
+obj2.age = obj.age;
+
+// override
+obj2.age = 30;
+
+// new key adding
+obj2.city = 'Hyderabad';
+
+var modified = { age: 30, city: 'Hyderabad'};
+var obj3 = {...obj, ...modified};
+
+var obj4 = {...obj, age: 30, city: 'Hyderabad'};
+
+
+Cloning Deleting keys.
+var obj = { 
+	firstName: 'Arjun', 
+	lastName: 'Krishna',
+	age: 20,
+	city: 'Hyderabad'
+}
+// Approach 1
+var obj2 = {};
+obj2.firstName = obj.firstName;
+obj2.lastName = obj.lastName;
+
+// Approach 2
+var obj3 = {};
+for(var key in obj) {
+	if(key != 'age' && key != 'city') {
+		obj3[key] = obj[key];
+	}
+}
+
+// Approach 3
+var { age, city, ...obj4} = {...obj};
+here age and city variables are created and values also set
+
+
+var { age: Person_Age, city: Person_City, ...obj4} = {...obj};
+here age and city are not created but Person_Age, Person_City are created and values also set.
+
+
+
+

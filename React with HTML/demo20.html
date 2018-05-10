@@ -1,0 +1,80 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<script type="text/babel">
+		class Header extends React.Component {
+			render(){
+				return (
+					<div> { this.props.title}</div>
+				);
+			}
+		}
+	
+		class Footer extends React.Component {
+			render(){
+				return (
+					<div> @Copyright 2008 </div>
+				);
+			}
+		}
+		
+		class Sidebar extends React.Component {
+			render(){
+				return (
+					<div> This is side bar </div>
+				);
+			}
+		}
+			
+		
+		class MasterPage extends React.Component {
+			render() {
+				return <div>
+							<Header title={this.props.title}/>
+							{this.props.children}
+							<Footer />
+					   </div>;
+			}
+		}
+		
+		class MasterPage2 extends React.Component {
+			render() {
+				return <div>
+							<Header title={this.props.title}/>
+							<Sidebar />
+							{this.props.children}
+							<Footer />
+					   </div>;
+			}
+		}
+	
+		class AboutUs extends React.Component {
+			render() {
+				return <MasterPage2 title={this.props.title}>
+							<div> Abous Page </div>
+							<div> This is for About Us</div>
+						</MasterPage2>;
+			}
+		}
+		
+		class ContactUs extends React.Component {
+			render() {
+				return <MasterPage title={this.props.title}>
+							<div> Abous Page </div>
+						</MasterPage>;
+			}
+		}
+		
+		function afterRender(){
+			ReactDOM.render(<AboutUs title='Welcome to React Demo' />, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>

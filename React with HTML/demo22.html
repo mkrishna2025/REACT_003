@@ -1,0 +1,34 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<script type="text/babel">
+	
+		class TestView extends React.Component {
+			render() {
+				return <div> Welcome {this.props.username}, {this.props.age}, {this.props.city}, {this.props.state} </div>;
+			}
+		}
+		
+		class TestComponent extends React.Component {
+			render() {
+				return <TestView { ...this.props} age="30" state="Telangana" />;
+			}
+			render2() {
+				var props = {...this.props, state: "Telangana" };
+				return <TestView { ...props}/>;
+			}
+		}
+		
+		function afterRender(){
+			ReactDOM.render(<TestComponent username='Neha' city='Hyderabad' age="20"/>, document.getElementById('container'));
+		}
+	</script>
+</head>
+<body onLoad="afterRender()">
+	<div id="container">
+	</div>
+</body>
+</html>
