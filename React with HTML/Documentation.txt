@@ -354,5 +354,76 @@ var { age: Person_Age, city: Person_City, ...obj4} = {...obj};
 here age and city are not created but Person_Age, Person_City are created and values also set.
 
 
+var students = ['Kavya', 'Prakash', 'Keerthi'];
+var students2 = [...students, 'Navya'];
+
+students2 => ["Kavya", "Prakash", "Keerthi", "Navya"];
+
+Call Back Function => function which is passed as a parameter to the called function and it is executed in the called function.
+
+function add(x, y){
+	var z = x + y;
+	console.log('Result is ' + z);
+}
+
+function add(x, y, callback){
+	var z = x + y;
+	callback(z);
+}
+
+add(10, 20, function(value) { console.log('Result is ' + value) } ) => Result is 30
+
+Examples
+
+var students = ["Kavya", "Prakash", "Keerthi", "Karthik"];
+function welcomeStudents(students){
+	for(var student of students) {
+        console.log('welcome to ' + student)
+    }
+}
+welcomeStudents(students) => printing welcome to each student
+
+function leaveStudents(students){
+	for(var student of students) {
+        console.log(student + ' will leave');
+    }
+}
+leaveStudents(students);
+
+function forEachItem(students, callBack){
+	for(var student of students) {
+        callBack(student);
+    }
+}
+forEachItem(students, function(student) { console.log('welcome to ' + student) });
+forEachItem(students, function(student) { console.log(student + ' will leave') });
+
+using prototype plus callback
+Array.prototype.forEachItem = function(callBack) {
+	for(var item of this) {
+        callBack(item);
+    }
+}
+students.forEachItem(function(student) { console.log('welcome to ' + student) });
+students.forEachItem(function(student) { console.log(student + ' will leave') });
 
 
+var persons = [
+	{ name: 'Karthik', age: 20, city: 'Delhi' }, 
+	{ name: 'Nalini', age: 20, city: 'Delhi' }, 
+	{ name: 'Venkat', age: 20, city: 'Delhi' }
+]
+
+
+persons.forEachItem(function(person) { console.log(person.name + ', ' + person.age + ', ' + person.city)} );
+Result =>
+Karthik, 20, Delhi
+Nalini, 20, Delhi
+Venkat, 20, Delhi
+
+Using inbuilt internal API => forEach
+persons.forEach(function(person) { console.log(person.name + ', ' + person.age + ', ' + person.city)} );
+
+map => cloning of array and each item can be overided inside callBack.
+var students2 = students.map(function(student) { return '<li>'+ student+'</li>'}) 
+Result => ["<li>Kavya</li>", "<li>Prakash</li>", "<li>Keerthi</li>"]
