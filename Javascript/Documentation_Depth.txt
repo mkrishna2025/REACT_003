@@ -1,0 +1,14 @@
+add(2, 4) => 6
+add(2)(4) => 6
+
+// Example of inner functions
+
+function add(x, y){
+	if(arguments.length == 2){
+		return x + y;
+	} else {
+		return function(a){
+			return a + x;
+		}
+	}
+}
