@@ -12,3 +12,6 @@ function add(x, y){
 		}
 	}
 }
+
+// Assignment
+add(2)(4)(6)
