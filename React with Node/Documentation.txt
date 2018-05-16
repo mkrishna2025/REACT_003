@@ -1,0 +1,109 @@
+Node
+	ServerSide JS Framework
+	http module to render web pages
+	webpack is like a latest version to render web pages
+
+BoilerPlate
+	Common Code
+	Tools/Script
+		create-react-app
+
+npm install -g create-react-app
+
+create-react-app internal process =>
+	create-react-app projectName
+	
+	md projectName
+	cd projectName
+	npm init
+	generates files like index.html.. css... index.js and app.js
+	npm install react
+	npm install react-dom
+	npm install react-scripts
+
+Advantages of BoilerPlate scripts
+	Code Generation
+	
+	
+npm - Modules
+Commands
+	add - npm install moduleName
+	update - npm update moduleName
+	delete - npm uninstall moduleName
+
+1. Installing dependencies one by one
+	npm install react
+	npm install react-dom
+
+2. Installing multiple dependencies with single command
+	npm install react react-dom
+
+Points to remember
+1. It installs modules inside node_modules folder.
+2. It installs submodules required for that module.
+3. In each module, there should be package.json.
+4. We will never checkin node_modules folder. So when we download a project from source control, we must run command npm install to install all dependencies.
+5. Module can be added using npm install moduleName or add module manually to dependencies object of package.json and run npm install command.
+6. save is attribute to be used to insert module into dependencies section of package.json
+	npm install react --save
+7. save-dev is attribute to be used to insert module into devDependencies section of package.json. These modules I need in development stage only.
+	npm install babel --save-dev
+
+	
+Installing without BoilerPlate
+https://reactjs.org/docs/add-react-to-an-existing-app.html#installing-react
+
+
+Installing BoilerPlate => create-react-app
+https://reactjs.org/docs/add-react-to-a-new-app.html
+
+
+Creating a Project
+Node > 5.8
+npx create-react-app projectName
+Else 
+create-react-app projectName
+
+Running a Project
+cd projectName
+npm start
+
+Project - Web
+	React
+	React Dom
+	Index.html
+
+Project - Node
+	npm init
+	npm install React
+	npm install React-Dom
+	index.html
+	
+
+Project Structure
+node_modules => Modules get installed into this folder
+package.json
+	Scripts
+		start => Start of the project using WebPack
+		build => to generate bundle which can be deployed directly
+		test => running Tests
+		eject => it will come out of create-react-app
+registerServiceWorker.js
+	Caches Images and CSS in browser so that when there is no or less internet, it will load these files from cache for faster access of pages.
+	
+	
+Starting Point
+public/index.html
+src/index.js
+
+Actual Starting Point 
+src/App.js
+
+ES5
+var React = require('react');
+
+ES6
+import React from 'react';
+
+
+https://reactjs.org/docs/add-react-to-an-existing-app.html
