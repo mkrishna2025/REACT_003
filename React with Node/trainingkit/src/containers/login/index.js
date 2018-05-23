@@ -41,8 +41,36 @@ export default class Login extends React.Component {
         
         if(isValid){
             // Redirect to Home Scren
-            alert('Valided Successfully');
-            this.props.history.push("home");
+            alert('Validated Successfully');
+            var formData = new FormData();
+            formData.append('username', this.state.username);
+            formData.append('password', this.state.password);
+
+            fetch('http://trainingkit.azurewebsites.net/api/Users/CheckUserExists', {
+                method: 'POST',
+                body: formData
+            }).then((response) => {
+                debugger;
+                if(response.status == 200){
+                    return response.json();
+                }
+            }).then(response => {
+                debugger;
+                if(response.success){
+                    if(response.data){
+                        alert('Login Successfully');
+                        this.props.history.push("home");
+                    } else {
+                        alert('Invalid Credentials');
+                    }
+                } else {
+                    alert('Unknown Error');
+                }
+            }).catch((exception) => {
+                debugger;
+            });
+            
+            //
         }
         
     }
