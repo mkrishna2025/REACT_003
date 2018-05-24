@@ -1,0 +1,82 @@
+Project Structure
+	src - JavaScript files
+	public - default html file ie index.html
+	node_modules - Modules Installed
+	
+Starting Point - index.js
+registerServiceWorker.js - Caching Resources like images, css, js
+
+Routing
+Add our app as a child to BrowserRouter
+
+/* => default
+Switch => pick only 1 component
+exact => set for parent route so parent component is not loaded for nested routes.
+
+Project Structure
+	src
+		containers => pages
+		components => reusable components
+		utils => utilities like conversions, null checking
+		data => static data
+
+Asynchronous process => Process which runs in parallel with main thread but independent of main thread.
+		
+Promise => to handle asynchronous process
+
+Promise returns 2 things => success, failure
+
+Ex: TakeHelp({ 
+				action: 'CollectMoney', 
+				amount: 1000
+			}).then(callback).catch(callback);
+	
+	TakeHelp({
+		action: 'CollectAndDepositMoney',
+		amount: 1000
+	}).then(callback).then(callback).catch(callback);
+
+
+
+In Order to test backend API's use postman
+https://www.getpostman.com/apps
+
+fetch(url, options).then(callback).catch(callback);
+
+fetch('www.google.com').then(callback).catch(callback);
+
+var formData = new FormData();
+formData.append('username', 'admin');
+formData.append('password', 'admin');
+
+fetch('http://trainingkit.azurewebsites.net/api/Users/CheckUserExists', {
+	method: 'POST',
+	body: formData
+}).then(callback).catch(callback)
+
+var fetch = function(url, options){
+	return new Promise();
+}
+
+Life Cycle
+
+Component => ES6 class => JavaScript
+
+Login(); => triggering a function
+<Login /> => Creating a instance
+
+Es6 class => Stateful component
+JavaScript => Stateless
+
+Es6 class
+	Constructor => default initialization
+	ComponentWillMount => Configuring Notifications in case of mobile, Subscriptions, Activating blue tooth
+	Render => Rendering the Components
+	ComponentDidMount => for Backend API calls
+	ComponentWillUnMount => unsubscriptions
+
+ComponentWillMount => 
+this.props.facebook.subscribe.channel('/prakash kumar')
+
+ComponentWillUnMount => 
+this.props.facebook.unsubscribe.channel('/prakash kumar')
