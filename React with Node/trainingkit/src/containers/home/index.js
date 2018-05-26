@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import './home.css';
 
-import { AxiosProvider, Get, withAxios } from 'react-axios'
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
     constructor(props){
         super(props);
         //alert('constructor');
+        debugger;
+        var menu = JSON.parse(sessionStorage.getItem('menu'));
         this.state = {
-            students: []
+            students: [],
+            menuItems: menu
         }
     }
     componentWillMount(){
         //alert('componentWillMount');
     }
+
     componentDidMount(){
         //alert('componentDidMount');
         fetch("http://trainingkit.azurewebsites.net/api/Users/GetAttendees")
@@ -36,8 +40,17 @@ export default class Home extends Component {
     }
     render() {
         //alert('render');
+        var username = sessionStorage.getItem('userName');
         return (
             <div> 
+                Welcome to {username}
+                <ul>
+                    {this.state.menuItems.map(menu => <li><Link to={menu.Path} >{menu.Label}</Link> </li>)}
+                </ul>
+                Using Hyperlink
+                <ul>
+                    {this.state.menuItems.map(menu => <li><a href={menu.path}>{menu.Label}</a> </li>)}
+                </ul>
                 <table class="studentsTable">
                     <thead>
                         <tr>

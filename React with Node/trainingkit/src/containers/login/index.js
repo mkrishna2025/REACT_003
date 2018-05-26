@@ -46,7 +46,7 @@ export default class Login extends React.Component {
             formData.append('username', this.state.username);
             formData.append('password', this.state.password);
 
-            fetch('http://trainingkit.azurewebsites.net/api/Users/CheckUserExists', {
+            /*fetch('http://trainingkit.azurewebsites.net/api/Users/CheckUserExists', {
                 method: 'POST',
                 body: formData
             }).then((response) => {
@@ -59,6 +59,34 @@ export default class Login extends React.Component {
                 if(response.success){
                     if(response.data){
                         alert('Login Successfully');
+                        this.props.history.push("home");
+                    } else {
+                        alert('Invalid Credentials');
+                    }
+                } else {
+                    alert('Unknown Error');
+                }
+            }).catch((exception) => {
+                debugger;
+            });*/
+            
+            fetch('http://trainingkit.azurewebsites.net/api/Users/Login', {
+                method: 'POST',
+                body: formData
+            }).then((response) => {
+                if(response.status == 200){
+                    return response.json();
+                }
+            }).then(response => {
+                if(response.success){
+                    if(response.data.IsValid){
+                        alert('Login Successfully');
+                        var role = response.data.Role;
+                        var name = response.data.UserName;   
+                        sessionStorage.setItem('menu', JSON.stringify(response.data.Menu));
+                        sessionStorage.setItem('isLoggedIn', 'true');
+                        sessionStorage.setItem('role', role);
+                        sessionStorage.setItem('userName', name);
                         this.props.history.push("home");
                     } else {
                         alert('Invalid Credentials');
