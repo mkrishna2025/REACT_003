@@ -1,0 +1,31 @@
+
+/* slideshow 1 */	
+
+.ss1_wrapper { position:relative; width:983px; height:304px; /*margin: 0 0 20px 0;*/ margin:0 auto; background:#3182ad;  }
+.ss1_wrapper .slideshow { position:relative; margin:0 auto; width:983px; height:304px;/*z-index:-1*/}
+	
+	.ss1_wrapper .slideshow_item { width::983px;;margin:0 auto; position:relative; height:304px; }
+	.ss1_wrapper .slideshow_item .data { display:none; }	
+	
+	.ss1_wrapper a.slideshow_prev { position:absolute; /*left:200px;*/ left:20px; bottom:120px; z-index:10; width:40px; height:46px; outline:none; background:url(trans-black-70.png); }
+		.ss1_wrapper a.slideshow_prev:hover { background:#000; }
+		.ss1_wrapper a.slideshow_prev span { display:block; width:40px; height:46px; background:url(arrows.png) no-repeat -55px 50%; text-indent:-9999px; }
+		
+	.ss1_wrapper a.slideshow_next { position:absolute; right:20px; bottom:120px; z-index:10; width:40px; height:46px; outline:none; background:url(trans-black-70.png);}
+		.ss1_wrapper a.slideshow_next:hover { background:#000; }
+		.ss1_wrapper a.slideshow_next span { display:block; width:40px; height:46px; background:url(arrows.png) no-repeat -5px 50%; text-indent:-9999px; }
+	
+	.ss1_wrapper .slideshow_paging { position:absolute; bottom:10px; background: #333; border-radius:5px; -moz-border-radius:5px;-webkit-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;  /*right:545px; */z-index:11; font-size:12px;right:440px;  }
+		.ss1_wrapper .slideshow_paging a { display:block; float:left; margin:0 0 0 3px; padding:4px 7px; color:#ccc;border-radius:3px; -moz-border-radius:3px;-webkit-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px; }
+			.ss1_wrapper .slideshow_paging a:hover { color:#fff }
+			.ss1_wrapper .slideshow_paging a.activeSlide { background:#eee; color:#222 }
+	
+	.ss1_wrapper .slideshow_box { position:absolute; /*left:230px;*/left:30px; bottom:0; background:url(trans-black-70.png); width:360px; height:100px; z-index:10; }
+		.ss1_wrapper .slideshow_box .data { padding:15px; color:#ccc;  }
+		.ss1_wrapper .slideshow_box .data h4 { color:#fff; font:bold 18px arial, sans-serif; padding:0; margin:0 0 10px 0; }
+		.ss1_wrapper .slideshow_box .data p { padding:0; margin:0; line-height:140%;}
+		.ss1_wrapper .slideshow_box .data a { color:#fff; }
+		
+	
+
+
