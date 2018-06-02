@@ -6,8 +6,11 @@
     "jquery": "^3.3.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-gmaps": "^1.9.0",
+    "react-google-autocomplete": "^1.0.16",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-tabs": "^2.2.2"
   },
   "scripts": {
     "start": "SET PORT= 3002 && react-scripts start",

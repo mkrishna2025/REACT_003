@@ -11,8 +11,7 @@ import image5 from '../../images/5.jpg';
 
 import arrow_right from '../../images/arrow_right.png';
 
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import MasterPage from '../../components/masterpage';
 
 class SlideshowComponent extends Component {
     render(){
@@ -56,8 +55,7 @@ export default class Demo extends Component {
 
     render(){
         return (
-            <div>
-                <Header />
+            <MasterPage>
                 <div id="main_content">
                     <div class="ss1_wrapper">
                     <a href="#" class="slideshow_prev"><span>Previous</span></a>
@@ -98,10 +96,9 @@ export default class Demo extends Component {
                         <a href="#"><img src={arrow_right} alt="arrow right" />Read More</a>
                         </div>
                     </div>
-                    </div>
-                    <Footer copyright="Copyright 2013 -Bixenta Info Private Limited. All rights reserved." />
                 </div>
             </div>
+            </MasterPage>
 
         );
     }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+
 export default class Partners extends Component {
     constructor(props){
         super(props);
@@ -9,6 +12,7 @@ export default class Partners extends Component {
     render(){
         return (
             <div>
+                <Header />
                 <div class="partners"></div>
                 <div id="main_content">
                     <div id="contact_area">
@@ -49,6 +53,7 @@ export default class Partners extends Component {
                 </div>
             </div>
             </div>
+            <Footer />
         </div>
         );
     }
