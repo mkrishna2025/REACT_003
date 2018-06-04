@@ -9,6 +9,8 @@ import Partners from './containers/partners';
 import Maps from './containers/maps';
 import Tabs from './containers/tabs';
 import MasterPage from './components/masterpage';
+import Caurosal from './containers/carouseldemo/index2';
+import ChartsDemo from './containers/chartsdemo';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -84,6 +86,9 @@ class App4 extends Component {
         <Route path="/home" component={Home} />
         <Route path="/maps" component={Maps} />
         <Route path="/tabs" component={Tabs} />
+        <Route path="/caurosal" component={Caurosal} />
+        <Route path="/charts" component={ChartsDemo} />
+        
         <Route path="/*" component={UnImplemented} />
       </Switch>
     );
